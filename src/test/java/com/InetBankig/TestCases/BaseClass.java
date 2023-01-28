@@ -91,7 +91,7 @@ public class BaseClass {
 	@AfterClass
 	  public void tearDown() 
 	  {
-		  driver.close();
+		driver.close();
 		 
 	  }
 		
@@ -101,12 +101,12 @@ public class BaseClass {
 		Screen ss=new Screen();
 		try
 		{
-			Pattern closeButton=new Pattern("C:\\Users\\sai\\eclipse-workspace\\InetBanking_V1_SDET_Github\\sikuli\\close.png");
+			Pattern closeButton=new Pattern("./sikuli/close.png");
 			ss.click(closeButton);
 		}
 		catch(Exception e)
 		{
-			Pattern crosButton=new Pattern("C:\\Users\\sai\\eclipse-workspace\\InetBanking_V1_SDET_Github\\sikuli\\cross.png");
+			Pattern crosButton=new Pattern("./sikuli/cross.png");
 			ss.click(crosButton);
 			
 		}

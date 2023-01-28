@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-01-14T12:11:42 IST" name="Default suite" finished-at="2023-01-14T12:11:53 IST" duration-ms="10965">
+  <suite started-at="2023-01-28T18:04:23 IST" name="Suite" finished-at="2023-01-28T18:04:53 IST" duration-ms="30137">
     <groups>
+      <group name="regression">
+        <method signature="TC_LogIn_003.TC_003()[pri:0, instance:com.InetBankig.TestCases.TC_LogIn_003@7c7a06ec]" name="TC_003" class="com.InetBankig.TestCases.TC_LogIn_003"/>
+      </group> <!-- regression -->
       <group name="smoke">
-        <method signature="TC_LogIn_001.TC_001()[pri:0, instance:com.InetBankig.TestCases.TC_LogIn_001@2b71e916]" name="TC_001" class="com.InetBankig.TestCases.TC_LogIn_001"/>
+        <method signature="TC_LogIn_001.TC_001()[pri:0, instance:com.InetBankig.TestCases.TC_LogIn_001@13c9d689]" name="TC_001" class="com.InetBankig.TestCases.TC_LogIn_001"/>
       </group> <!-- smoke -->
     </groups>
-    <test started-at="2023-01-14T12:11:42 IST" name="Default test" finished-at="2023-01-14T12:11:53 IST" duration-ms="10965">
-      <class name="com.InetBankig.TestCases.TC_LogIn_001">
-        <test-method is-config="true" signature="launchBrowser(java.lang.String)[pri:0, instance:com.InetBankig.TestCases.TC_LogIn_001@2b71e916]" started-at="2023-01-14T12:11:42 IST" name="launchBrowser" finished-at="2023-01-14T12:11:53 IST" duration-ms="10689" status="PASS">
+    <test started-at="2023-01-28T18:04:23 IST" name="TC_LogIn_001" finished-at="2023-01-28T18:04:53 IST" duration-ms="30137">
+      <class name="com.InetBankig.TestCases.TC_LogIn_003">
+        <test-method is-config="true" signature="launchBrowser(java.lang.String)[pri:0, instance:com.InetBankig.TestCases.TC_LogIn_003@7c7a06ec]" started-at="2023-01-28T18:04:34 IST" name="launchBrowser" finished-at="2023-01-28T18:04:45 IST" duration-ms="10138" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -21,14 +24,17 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="TC_001()[pri:0, instance:com.InetBankig.TestCases.TC_LogIn_001@2b71e916]" started-at="2023-01-14T12:11:53 IST" name="TC_001" description="Auther=akash" finished-at="2023-01-14T12:11:53 IST" duration-ms="16" status="FAIL">
-          <exception class="java.lang.NullPointerException">
+        <test-method signature="TC_003()[pri:0, instance:com.InetBankig.TestCases.TC_LogIn_003@7c7a06ec]" started-at="2023-01-28T18:04:45 IST" name="TC_003" description="Auther=bakash" finished-at="2023-01-28T18:04:53 IST" duration-ms="8091" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Cannot invoke "com.aventstack.extentreports.ExtentTest.info(String)" because "com.InetBankig.Utilities.IExtentReport.etest" is null]]>
+              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //input[@name='name']' (tried for 5 second(s) with 500 milliseconds interval)]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "com.aventstack.extentreports.ExtentTest.info(String)" because "com.InetBankig.Utilities.IExtentReport.etest" is null
-at com.InetBankig.TestCases.TC_LogIn_001.TC_001(TC_LogIn_001.java:27)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //input[@name='name']' (tried for 5 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at com.InetBankig.TestCases.BaseClass.sendKeys(BaseClass.java:125)
+at com.InetBankig.TestCases.TC_LogIn_003.TC_003(TC_LogIn_003.java:40)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -55,17 +61,69 @@ at org.testng.TestNG.run(TestNG.java:1067)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name='name']"}
+  (Session info: chrome=109.0.5414.120)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-VT01K59', ip: '192.168.1.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\sai\AppData\Local\...}, goog:chromeOptions: {debuggerAddress: localhost:65185}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e8241743ba0e2e254e65892994134128
+*** Element info: {Using=xpath, value=//input[@name='name']}
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy17.isDisplayed(Unknown Source)
+at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+... 28 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_003 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.InetBankig.TestCases.TC_LogIn_003@7c7a06ec]" started-at="2023-01-28T18:04:53 IST" name="tearDown" finished-at="2023-01-28T18:04:53 IST" duration-ms="197" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.InetBankig.TestCases.TC_LogIn_003 -->
+      <class name="com.InetBankig.TestCases.TC_LogIn_001">
+        <test-method is-config="true" signature="launchBrowser(java.lang.String)[pri:0, instance:com.InetBankig.TestCases.TC_LogIn_001@13c9d689]" started-at="2023-01-28T18:04:24 IST" name="launchBrowser" finished-at="2023-01-28T18:04:32 IST" duration-ms="7568" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="TC_001()[pri:0, instance:com.InetBankig.TestCases.TC_LogIn_001@13c9d689]" started-at="2023-01-28T18:04:32 IST" name="TC_001" description="Auther=akash" finished-at="2023-01-28T18:04:34 IST" duration-ms="2723" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC_001 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.InetBankig.TestCases.TC_LogIn_001@2b71e916]" started-at="2023-01-14T12:11:53 IST" name="tearDown" finished-at="2023-01-14T12:11:53 IST" duration-ms="185" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.InetBankig.TestCases.TC_LogIn_001@13c9d689]" started-at="2023-01-28T18:04:34 IST" name="tearDown" finished-at="2023-01-28T18:04:34 IST" duration-ms="153" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.InetBankig.TestCases.TC_LogIn_001 -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- TC_LogIn_001 -->
+  </suite> <!-- Suite -->
 </testng-results>

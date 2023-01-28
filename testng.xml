@@ -5,14 +5,11 @@
 		<listener class-name="com.InetBankig.Utilities.IExtentReport" />
 	</listeners>
 
-
-	<test name="TC_LogIn_001">
-		<parameter name="browser" value="chrome" />
+	<test name="banking">
 		<classes>
-			<class name="com.InetBankig.TestCases.TC_LogIn_001" />
-			<class name="com.InetBankig.TestCases.TC_LogIn_002" />
-			<class name="com.InetBankig.TestCases.TC_LogIn_003" />
-
+			<class name="com.InetBankig.TestCases.TC_LogIn_001"></class>
+			<class name="com.InetBankig.TestCases.TC_LogIn_002"></class>
+			<class name="com.InetBankig.TestCases.TC_LogIn_003"></class>
 		</classes>
 	</test>
 
